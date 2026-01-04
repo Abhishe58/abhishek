@@ -115,6 +115,7 @@ export default function Home() {
     const phoneNumber = "+919510954023";
 
     const message =
+      `Portfolio Request\n` +
       `Name: ${formData.name}\n` +
       `Email: ${formData.email}\n` +
       `Message: ${formData.message}`;
@@ -583,12 +584,14 @@ export default function Home() {
                   <input
                     type="text"
                     placeholder="Name"
+                    name="name"
                     className="inputField"
                     onChange={handleChange}
                     required
                   />
                   <input
                     type="email"
+                    name="email"
                     placeholder="Email"
                     className="inputField"
                     onChange={handleChange}
@@ -596,6 +599,7 @@ export default function Home() {
                   />
                   <textarea
                     placeholder="Message..."
+                    name="message"
                     onChange={handleChange}
                     className="textArea"
                   ></textarea>
