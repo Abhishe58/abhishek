@@ -14,6 +14,7 @@ import ratanindustries from "/ratanindustries.png";
 import yashrajcab from "/yashrajcab.png";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaLinkedin } from "react-icons/fa6";
+import type { ChangeEvent, FormEvent } from "react";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -90,6 +91,39 @@ export default function Home() {
     // Cleanup: clear timer if component unmounts to prevent memory leaks
     return () => clearTimeout(timer);
   }, [currentText, isDeleting, loopNum, typingSpeed, texts]);
+
+  const [formData, setFormData] = useState({
+    message: "",
+    name: "",
+    email: "",
+  });
+
+  // Fixed: Updated type to include HTMLTextAreaElement
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleBookCab = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const phoneNumber = "+919510954023";
+
+    const message =
+      `Name: ${formData.name}\n` +
+      `Email: ${formData.email}\n` +
+      `Message: ${formData.message}`;
+
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      message
+    )}`;
+    window.open(url, "_blank");
+  };
   return (
     <>
       <div className="orgBg">
@@ -545,24 +579,29 @@ export default function Home() {
             </p>
             <div className="contactxyz">
               <div className="contactusContainera">
-                <form action="">
+                <form onSubmit={handleBookCab}>
                   <input
                     type="text"
                     placeholder="Name"
                     className="inputField"
+                    onChange={handleChange}
                     required
                   />
                   <input
                     type="email"
                     placeholder="Email"
                     className="inputField"
+                    onChange={handleChange}
                     required
                   />
                   <textarea
                     placeholder="Message..."
+                    onChange={handleChange}
                     className="textArea"
                   ></textarea>
-                  <button className="projectBut">Submit Form</button>
+                  <button className="projectBut" type="submit">
+                    Submit Form
+                  </button>
                 </form>
               </div>
               <div className="contactusContainerb">
