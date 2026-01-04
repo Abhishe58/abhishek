@@ -362,7 +362,7 @@ header {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  background-image: url("loginbg.png");
+  background-image: url("/loginbg.png");
   background-repeat: no-repeat;
   background-size: cover;
   padding: 10px 10px;
@@ -412,7 +412,7 @@ header {
 .ftContainer {
   height: 30vh;
   width: 100%;
-  background-image: url("fbg.jpg");
+  background-image: url("/fbg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   padding: 10px 10px;
