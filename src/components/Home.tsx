@@ -141,6 +141,8 @@ export default function Home() {
       "/connectcables.png",
       "/ratanindustries.png",
       "/yashrajcab.png",
+      "/loginbg.png",
+      "/fbg.jpg",
     ];
 
     const preloadImage = (url: string): Promise<void> => {
