@@ -272,8 +272,8 @@ export default function Home() {
               className="heroSection"
               id="home"
               variants={containerVariants}
+              animate={isPageLoaded ? "visible" : "hidden"}
               initial="hidden"
-              animate="visible"
             >
               <div className="typeBox">
                 <motion.p className="hiab" variants={itemVariants}>
@@ -732,9 +732,18 @@ export default function Home() {
           </div>
         </div>
         <motion.header
-          initial={{ y: 30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          variants={{
+            hidden: { y: 30, opacity: 0 },
+            visible: {
+              y: 0,
+              opacity: 1,
+              transition: { duration: 0.8, ease: "easeOut" },
+            },
+          }}
+          // 2. Set initial state
+          initial="hidden"
+          // 3. Toggle between the variant names based on your state
+          animate={isPageLoaded ? "visible" : "hidden"}
         >
           <p className="headerIco">
             <AiFillFire />
