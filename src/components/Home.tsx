@@ -192,11 +192,11 @@ export default function Home() {
           }}
           className="loadingContainer"
         >
-          <h1>
+          <h1 style={{ textAlign: "center" }}>
             Welcome to <span style={{ color: "slateblue" }}>Abhishek</span>{" "}
             Portfolio
           </h1>
-          <h2>
+          <h2 style={{ textAlign: "center" }}>
             Loading my experience<span id="loadania">.</span>
             <span id="loadanib">.</span>
             <span id="loadanic">.</span>
