@@ -190,8 +190,17 @@ export default function Home() {
             width: "100%",
             height: "100%",
           }}
+          className="loadingContainer"
         >
-          <h1 style={{ color: "white" }}>Loading</h1>
+          <h1>
+            Welcome to <span style={{ color: "slateblue" }}>Abhishek</span>{" "}
+            Portfolio
+          </h1>
+          <h2>
+            Loading my experience<span id="loadania">.</span>
+            <span id="loadanib">.</span>
+            <span id="loadanic">.</span>
+          </h2>
         </div>
       )}
       <div
@@ -315,7 +324,9 @@ export default function Home() {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
                 >
-                  <motion.span variants={buttonVariants}>Projects</motion.span>
+                  <motion.a href="#projects" variants={buttonVariants}>
+                    Projects
+                  </motion.a>
                 </motion.p>
 
                 <motion.p
@@ -324,13 +335,14 @@ export default function Home() {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
                 >
-                  <motion.span
+                  <motion.a
+                    href="#contact"
                     initial={{ y: 30, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                   >
                     Contact Us
-                  </motion.span>
+                  </motion.a>
                 </motion.p>
               </div>
             </motion.div>
@@ -720,12 +732,20 @@ export default function Home() {
               </div>
               <div className="ftContainer">
                 <div className="icobox">
-                  <p className="icoLink">
+                  <a
+                    href="https://www.instagram.com/abhi.mevada19"
+                    target="_blank"
+                    className="icoLink"
+                  >
                     <AiFillInstagram />
-                  </p>
-                  <p className="icoLink">
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/abhishek-mevada-b85218321"
+                    target="_blank"
+                    className="icoLink"
+                  >
                     <FaLinkedin />
-                  </p>
+                  </a>
                 </div>
               </div>
             </div>

@@ -4,6 +4,43 @@
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
 }
+/* --- 1. Firefox (Standard) --- */
+html {
+  scrollbar-color: slateblue transparent;
+  scrollbar-width: 10px;
+}
+
+/* --- 2. WebKit Browsers (Chrome, Safari, Edge) --- */
+
+/* The entire scrollbar area */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+/* The track (background) */
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+/* The thumb (the part you drag) */
+::-webkit-scrollbar-thumb {
+  background: slateblue;
+  border-radius: 10px;
+
+  /* NOTE: This border cuts into the yellow. 
+     If you want pure yellow, remove this border line. */
+  border: 3px solid #f1f1f1;
+}
+
+/* Hover effect on the thumb */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(129, 115, 216);
+}
+body::-webkit-scrollbar {
+  display: none;
+}
 body {
   background-color: #000003;
   scroll-behavior: smooth;
