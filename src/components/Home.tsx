@@ -1,6 +1,5 @@
 import "./Home.css";
 import { AiFillFire } from "react-icons/ai";
-import { IoPartlySunny } from "react-icons/io5";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import Profile from "/aprofile.png";
@@ -678,9 +677,13 @@ export default function Home() {
               Resume
             </a>
           </div>
-          <p className="headerIco">
-            <IoPartlySunny />
-          </p>
+          <a
+            href="https://www.linkedin.com/in/abhishek-mevada-b85218321"
+            target="_blank"
+            className="headerIco"
+          >
+            <FaLinkedin />
+          </a>
         </motion.header>
       </div>
     </>
