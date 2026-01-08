@@ -178,6 +178,84 @@ export default function Home() {
       isMounted = false; // Cleanup to prevent memory leaks
     };
   }, []);
+
+  const projects = [
+    {
+      id: 1,
+      name: "Heart Disease Detector",
+      image: heartdiseasedetection,
+      description:
+        "End-to-end Machine Learning web application deployed on PythonAnywhere. Features a responsive Flask backend and Random Forest model, providing distinct interfaces for raw clinical data entry and user-friendly symptom assessment.",
+      skills: ["PANDAS", "MATPLOTLIB", "SKLEARN", "FLASK", "HTML", "CSS", "JS"],
+      link: "https://heartdisease.pythonanywhere.com/",
+    },
+    {
+      id: 2,
+      name: "EduLens-Student Result Predictor",
+      image: studentpredication,
+      description:
+        "Regression analysis tool deployed via Flask to forecast academic performance. Utilizes Scikit-Learn to process study metrics, delivering accurate grade predictions and actionable analytics for educational planning.",
+      skills: ["PANDAS", "MATPLOTLIB", "SKLEARN", "FLASK", "HTML", "CSS", "JS"],
+      link: "https://studentresultpredictor.pythonanywhere.com/",
+    },
+    {
+      id: 3,
+      name: "E-Commerce",
+      image: ecommerce,
+      description:
+        "Full-stack e-commerce platform mirroring major retailers. Features include a comprehensive vendor dashboard, secure shopping cart, unique group buying capabilities, and real-time email notifications for complete order lifecycle tracking.",
+      skills: ["HTML", "CSS", "JS", "FLASK", "SQLITE"],
+      link: "https://ecommerce8.pythonanywhere.com/",
+    },
+    {
+      id: 4,
+      name: "Password Manager",
+      image: passwordmanager,
+      description:
+        "A robust password management tool that securely stores user credentials. Implements a double-verification system where users must re-enter their login password to reveal hidden sensitive information, ensuring data safety.",
+      skills: ["HTML", "CSS", "JS", "FLASK", "SQLITE"],
+      link: "https://passwordsmanager.pythonanywhere.com/",
+    },
+    {
+      id: 5,
+      name: "Task Manager",
+      image: taskmanager,
+      description:
+        "Intuitive personal organizer designed to boost productivity. Users can securely log in to schedule tasks and receive instant, timely notifications exactly when their specific deadlines arrive.",
+      skills: ["HTML", "CSS", "JS", "FLASK", "SQLITE"],
+      link: "https://taskmanager5.pythonanywhere.com/",
+    },
+  ];
+
+  const client = [
+    {
+      id: 1,
+      name: "Ratan Industries",
+      image: ratanindustries,
+      description:
+        "Designed and developed a professional chemical manufacturing website featuring product catalogs, industry-focused solutions, quality compliance sections, SEO optimization, and a clean, interactive UI built with React.",
+      skills: ["REACT", "CSS", "TYPE SCRIPT", "EmailJs"],
+      link: "https://ratanindustries.netlify.app/",
+    },
+    {
+      id: 2,
+      name: "Yash Raj Cab Services",
+      image: yashrajcab,
+      description:
+        "Built a modern taxi service website for Yash Raj Cab Services, focusing on user-friendly navigation, service clarity, mobile responsiveness, and conversion-driven layout for local, airport, and outstation bookings.",
+      skills: ["REACT", "CSS", "TYPE SCRIPT", "WhatsApp Integration"],
+      link: "https://yashrajcabservices.netlify.app/",
+    },
+    {
+      id: 3,
+      name: "Connect Cables",
+      image: connectcables,
+      description:
+        "Delivered a responsive business website for Connect Cables, enhancing their online presence through structured content, optimized performance, and a professional industrial brand identity.",
+      skills: ["HTML", "CSS", "JS", "EmailJs"],
+      link: "https://connectcables.co.in/",
+    },
+  ];
   return (
     <>
       {!isPageLoaded && (
@@ -402,259 +480,71 @@ export default function Home() {
             <div className="projectSection" id="projects">
               <h1>Professional Highlights</h1>
               <div className="projectContainer">
-                <div className="projectBox">
-                  <img
-                    src={studentpredication}
-                    alt="Student Result Predictor"
-                    className="projectImg"
-                  />
-                  <div className="projectminBox">
-                    <p className="projectTitle">
-                      EduLens-Student Result Predictor
-                    </p>
-                    <p className="projectDescribe">
-                      Regression analysis tool deployed via Flask to forecast
-                      academic performance. Utilizes Scikit-Learn to process
-                      study metrics, delivering accurate grade predictions and
-                      actionable analytics for educational planning.
-                    </p>
-                    <div className="projectskillBox">
-                      <p className="projectSkilluse">HTML</p>
-                      <p className="projectSkilluse">CSS</p>
-                      <p className="projectSkilluse">JS</p>
-                      <p className="projectSkilluse">PYTHON</p>
-                      <p className="projectSkilluse">FLASK</p>
-                      <p className="projectSkilluse">SKLEARN</p>
-                      <p className="projectSkilluse">PANDAS</p>
-                      <p className="projectSkilluse">MATPLOTLIB</p>
+                {projects.map((pro) => {
+                  return (
+                    <div className="projectBox" key={pro.id}>
+                      <img
+                        src={pro.image}
+                        alt="Student Result Predictor"
+                        className="projectImg"
+                      />
+                      <div className="projectminBox">
+                        <p className="projectTitle">{pro.name}</p>
+                        <p className="projectDescribe">{pro.description}</p>
+                        <div className="projectskillBox">
+                          {pro.skills.map((skillPro) => {
+                            return (
+                              <p className="projectSkilluse" key={skillPro}>
+                                {skillPro}
+                              </p>
+                            );
+                          })}
+                        </div>
+                        <a
+                          href={pro.link}
+                          target="_blank"
+                          className="projectBut"
+                        >
+                          Visit Site
+                        </a>
+                      </div>
                     </div>
-                    <a
-                      href="https://studentresultpredictor.pythonanywhere.com"
-                      target="_blank"
-                      className="projectBut"
-                    >
-                      Visit Site
-                    </a>
-                  </div>
-                </div>
-                <div className="projectBox">
-                  <img
-                    src={heartdiseasedetection}
-                    alt="Student Result Predictor"
-                    className="projectImg"
-                  />
-                  <div className="projectminBox">
-                    <p className="projectTitle">Heart Disease Detector</p>
-                    <p className="projectDescribe">
-                      End-to-end Machine Learning web application deployed on
-                      PythonAnywhere. Features a responsive Flask backend and
-                      Random Forest model, providing distinct interfaces for raw
-                      clinical data entry and user-friendly symptom assessment.
-                    </p>
-                    <div className="projectskillBox">
-                      <p className="projectSkilluse">HTML</p>
-                      <p className="projectSkilluse">CSS</p>
-                      <p className="projectSkilluse">JS</p>
-                      <p className="projectSkilluse">PYTHON</p>
-                      <p className="projectSkilluse">FLASK</p>
-                      <p className="projectSkilluse">SKLEARN</p>
-                      <p className="projectSkilluse">PANDAS</p>
-                      <p className="projectSkilluse">MATPLOTLIB</p>
-                    </div>
-                    <a
-                      href="https://heartdisease.pythonanywhere.com/"
-                      target="_blank"
-                      className="projectBut"
-                    >
-                      Visit Site
-                    </a>
-                  </div>
-                </div>
-                <div className="projectBox">
-                  <img
-                    src={ecommerce}
-                    alt="Student Result Predictor"
-                    className="projectImg"
-                  />
-                  <div className="projectminBox">
-                    <p className="projectTitle">E-Commerce</p>
-                    <p className="projectDescribe">
-                      Full-stack e-commerce platform mirroring major retailers.
-                      Features include a comprehensive vendor dashboard, secure
-                      shopping cart, unique group buying capabilities, and
-                      real-time email notifications for complete order lifecycle
-                      tracking.
-                    </p>
-                    <div className="projectskillBox">
-                      <p className="projectSkilluse">HTML</p>
-                      <p className="projectSkilluse">CSS</p>
-                      <p className="projectSkilluse">JS</p>
-                      <p className="projectSkilluse">PYTHON</p>
-                      <p className="projectSkilluse">FLASK</p>
-                      <p className="projectSkilluse">SQLITE</p>
-                    </div>
-                    <a
-                      href="https://ecommerce8.pythonanywhere.com/"
-                      target="_blank"
-                      className="projectBut"
-                    >
-                      Visit Site
-                    </a>
-                  </div>
-                </div>
-                <div className="projectBox">
-                  <img
-                    src={passwordmanager}
-                    alt="Student Result Predictor"
-                    className="projectImg"
-                  />
-                  <div className="projectminBox">
-                    <p className="projectTitle">Password Manager</p>
-                    <p className="projectDescribe">
-                      A robust password management tool that securely stores
-                      user credentials. Implements a double-verification system
-                      where users must re-enter their login password to reveal
-                      hidden sensitive information, ensuring data safety.
-                    </p>
-                    <div className="projectskillBox">
-                      <p className="projectSkilluse">HTML</p>
-                      <p className="projectSkilluse">CSS</p>
-                      <p className="projectSkilluse">JS</p>
-                      <p className="projectSkilluse">PYTHON</p>
-                      <p className="projectSkilluse">FLASK</p>
-                      <p className="projectSkilluse">SQLITE</p>
-                    </div>
-                    <a
-                      href="https://passwordsmanager.pythonanywhere.com/"
-                      target="_blank"
-                      className="projectBut"
-                    >
-                      Visit Site
-                    </a>
-                  </div>
-                </div>
-                <div className="projectBox">
-                  <img
-                    src={taskmanager}
-                    alt="Student Result Predictor"
-                    className="projectImg"
-                  />
-                  <div className="projectminBox">
-                    <p className="projectTitle">Task Manager</p>
-                    <p className="projectDescribe">
-                      Intuitive personal organizer designed to boost
-                      productivity. Users can securely log in to schedule tasks
-                      and receive instant, timely notifications exactly when
-                      their specific deadlines arrive.
-                    </p>
-                    <div className="projectskillBox">
-                      <p className="projectSkilluse">HTML</p>
-                      <p className="projectSkilluse">CSS</p>
-                      <p className="projectSkilluse">JS</p>
-                      <p className="projectSkilluse">PYTHON</p>
-                      <p className="projectSkilluse">FLASK</p>
-                      <p className="projectSkilluse">SQLITE</p>
-                    </div>
-                    <a
-                      href="https://taskmanager5.pythonanywhere.com"
-                      target="_blank"
-                      className="projectBut"
-                    >
-                      Visit Site
-                    </a>
-                  </div>
-                </div>
+                  );
+                })}
               </div>
               <h1>My Clients</h1>
               <div className="projectContainer">
-                <div className="projectBox">
-                  <img
-                    src={ratanindustries}
-                    alt="Connect Cables"
-                    className="projectImg"
-                  />
-                  <div className="projectminBox">
-                    <p className="projectTitle">Ratan Industries</p>
-                    <p className="projectDescribe">
-                      Designed and developed a professional chemical
-                      manufacturing website featuring product catalogs,
-                      industry-focused solutions, quality compliance sections,
-                      SEO optimization, and a clean, interactive UI built with
-                      React.
-                    </p>
-                    <div className="projectskillBox">
-                      <p className="projectSkilluse">REACT</p>
-                      <p className="projectSkilluse">CSS</p>
-                      <p className="projectSkilluse">TYPE SCRIPT</p>
-                      <p className="projectSkilluse">EMAILJS</p>
+                {client.map((cli) => {
+                  return (
+                    <div className="projectBox" key={cli.id}>
+                      <img
+                        src={cli.image}
+                        alt={cli.name}
+                        className="projectImg"
+                      />
+                      <div className="projectminBox">
+                        <p className="projectTitle">{cli.name}</p>
+                        <p className="projectDescribe">{cli.description}</p>
+                        <div className="projectskillBox">
+                          {cli.skills.map((cliSkill) => {
+                            return (
+                              <p className="projectSkilluse" key={cliSkill}>
+                                {cliSkill}
+                              </p>
+                            );
+                          })}
+                        </div>
+                        <a
+                          href={cli.link}
+                          target="_blank"
+                          className="projectBut"
+                        >
+                          Visit Site
+                        </a>
+                      </div>
                     </div>
-                    <a
-                      href="https://ratanindustries.netlify.app/"
-                      target="_blank"
-                      className="projectBut"
-                    >
-                      Visit Site
-                    </a>
-                  </div>
-                </div>
-                <div className="projectBox">
-                  <img
-                    src={yashrajcab}
-                    alt="Connect Cables"
-                    className="projectImg"
-                  />
-                  <div className="projectminBox">
-                    <p className="projectTitle">Yash Raj Cab Services</p>
-                    <p className="projectDescribe">
-                      Built a modern taxi service website for Yash Raj Cab
-                      Services, focusing on user-friendly navigation, service
-                      clarity, mobile responsiveness, and conversion-driven
-                      layout for local, airport, and outstation bookings.
-                    </p>
-                    <div className="projectskillBox">
-                      <p className="projectSkilluse">REACT</p>
-                      <p className="projectSkilluse">CSS</p>
-                      <p className="projectSkilluse">TYPE SCRIPT</p>
-                      <p className="projectSkilluse">WhatsApp Integration</p>
-                    </div>
-                    <a
-                      href="https://yashrajcabservices.netlify.app/"
-                      target="_blank"
-                      className="projectBut"
-                    >
-                      Visit Site
-                    </a>
-                  </div>
-                </div>
-                <div className="projectBox">
-                  <img
-                    src={connectcables}
-                    alt="Connect Cables"
-                    className="projectImg"
-                  />
-                  <div className="projectminBox">
-                    <p className="projectTitle">Connect Cables</p>
-                    <p className="projectDescribe">
-                      Delivered a responsive business website for Connect
-                      Cables, enhancing their online presence through structured
-                      content, optimized performance, and a professional
-                      industrial brand identity.
-                    </p>
-                    <div className="projectskillBox">
-                      <p className="projectSkilluse">HTML</p>
-                      <p className="projectSkilluse">CSS</p>
-                      <p className="projectSkilluse">JS</p>
-                      <p className="projectSkilluse">EMAILJS</p>
-                    </div>
-                    <a
-                      href="https://studentresultpredictor.pythonanywhere.com"
-                      target="_blank"
-                      className="projectBut"
-                    >
-                      Visit Site
-                    </a>
-                  </div>
-                </div>
+                  );
+                })}
               </div>
             </div>
             <div className="contactSection" id="contact">
