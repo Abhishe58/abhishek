@@ -103,6 +103,7 @@ header {
   text-decoration: none;
   padding: 5px;
   white-space: nowrap;
+  cursor: pointer;
 }
 .heroSection {
   position: relative;

@@ -11,6 +11,7 @@ import taskmanager from "/taskmanager.png";
 import connectcables from "/connectcables.png";
 import ratanindustries from "/ratanindustries.png";
 import yashrajcab from "/yashrajcab.png";
+import resumePdf from "/resume.pdf";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaLinkedin } from "react-icons/fa6";
 import type { ChangeEvent, FormEvent } from "react";
@@ -255,6 +256,10 @@ export default function Home() {
       link: "https://connectcables.co.in/",
     },
   ];
+
+  const openPdf = () => {
+    window.open(resumePdf, "_blank");
+  };
   return (
     <>
       {!isPageLoaded && (
@@ -673,7 +678,7 @@ export default function Home() {
             <a href="#contact" className="navHref">
               Contact Me
             </a>
-            <a href="" className="resumeBut">
+            <a onClick={openPdf} className="resumeBut">
               Resume
             </a>
           </div>
