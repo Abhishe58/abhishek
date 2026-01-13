@@ -427,7 +427,7 @@ export default function Home() {
                   </motion.a>
                 </motion.p>
                 <motion.p
-                  className="resumeBut"
+                  className="ctaBut"
                   initial={{ y: 30, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
