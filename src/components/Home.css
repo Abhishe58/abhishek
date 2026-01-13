@@ -171,7 +171,8 @@ header {
   backdrop-filter: blur(15px);
   cursor: pointer;
   text-decoration: none;
-  color: white;
+  background: white;
+  color: black;
 }
 .ctaBut a {
   text-decoration: none;
