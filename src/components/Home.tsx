@@ -426,6 +426,16 @@ export default function Home() {
                     Contact Us
                   </motion.a>
                 </motion.p>
+                <motion.p
+                  className="resumeBut"
+                  initial={{ y: 30, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                >
+                <motion.a onClick={openPdf} className="resumeBut" initial={{ y: 30, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}>Resume</motion.a>
+                  </motion.p>
               </div>
             </motion.div>
             <div className="aboutSection" id="about">
@@ -675,12 +685,12 @@ export default function Home() {
             <a href="#projects" className="navHref">
               Project
             </a>
-            <a href="#contact" className="navHref">
+           {/* <a href="#contact" className="navHref">
               Contact Me
-            </a>
-            <a onClick={openPdf} className="resumeBut">
+            </a>*/}
+            {/*<a onClick={openPdf} className="resumeBut">
               Resume
-            </a>
+            </a>*/}
           </div>
           <a
             href="https://www.linkedin.com/in/abhishek-mevada-b85218321"
