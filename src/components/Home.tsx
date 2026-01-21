@@ -11,7 +11,7 @@ import taskmanager from "/taskmanager.png";
 import connectcables from "/connectcables.png";
 import ratanindustries from "/ratanindustries.png";
 import yashrajcab from "/yashrajcab.png";
-import resumePdf from "/resume.pdf";
+import resumePdf from "/resumea.pdf";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaLinkedin } from "react-icons/fa6";
 import type { ChangeEvent, FormEvent } from "react";
