@@ -1,5 +1,5 @@
 import "./Home.css";
-import { AiFillFire } from "react-icons/ai";
+import { IoDocument } from "react-icons/io5";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import Profile from "/aprofile.png";
@@ -8,6 +8,7 @@ import heartdiseasedetection from "/heartdiseasedetection.png";
 import ecommerce from "/ecommerce.png";
 import passwordmanager from "/passwordmanager.png";
 import taskmanager from "/taskmanager.png";
+import blog from "/blog.png";
 import connectcables from "/connectcables.png";
 import ratanindustries from "/ratanindustries.png";
 import yashrajcab from "/yashrajcab.png";
@@ -66,7 +67,7 @@ export default function Home() {
       setCurrentText(
         isDeleting
           ? fullText.substring(0, currentText.length - 1) // Delete char
-          : fullText.substring(0, currentText.length + 1) // Add char
+          : fullText.substring(0, currentText.length + 1), // Add char
       );
 
       // Speed Logic: Typing is standard, deleting is faster
@@ -100,7 +101,7 @@ export default function Home() {
 
   // Fixed: Updated type to include HTMLTextAreaElement
   const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -121,7 +122,7 @@ export default function Home() {
       `Message: ${formData.message}`;
 
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-      message
+      message,
     )}`;
     window.open(url, "_blank");
   };
@@ -224,6 +225,15 @@ export default function Home() {
         "Intuitive personal organizer designed to boost productivity. Users can securely log in to schedule tasks and receive instant, timely notifications exactly when their specific deadlines arrive.",
       skills: ["HTML", "CSS", "JS", "FLASK", "SQLITE"],
       link: "https://taskmanager5.pythonanywhere.com/",
+    },
+    {
+      id: 6,
+      name: "Blog",
+      image: blog,
+      description:
+        "A custom-designed content hub showcasing minimal aesthetics and clean typography. Prioritizing user experience, this project blends engaging animations with accessibility best practices to create an immersive storytelling environment.",
+      skills: ["HTML", "CSS", "JS", "FLASK", "SQLITE"],
+      link: "https://theblogs.pythonanywhere.com/",
     },
   ];
 
@@ -432,10 +442,16 @@ export default function Home() {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
                 >
-                <motion.a onClick={openPdf} className="resumeBut" initial={{ y: 30, opacity: 0 }}
+                  <motion.a
+                    onClick={openPdf}
+                    className="resumeBut"
+                    initial={{ y: 30, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}>Resume</motion.a>
-                  </motion.p>
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                  >
+                    Resume
+                  </motion.a>
+                </motion.p>
               </div>
             </motion.div>
             <div className="aboutSection" id="about">
@@ -669,8 +685,8 @@ export default function Home() {
           // 3. Toggle between the variant names based on your state
           animate={isPageLoaded ? "visible" : "hidden"}
         >
-          <p className="headerIco">
-            <AiFillFire />
+          <p onClick={openPdf} className="headerIco">
+            <IoDocument />
           </p>
           <div className="nav">
             <a href="#home" className="navHref">
@@ -685,7 +701,7 @@ export default function Home() {
             <a href="#projects" className="navHref">
               Project
             </a>
-           {/* <a href="#contact" className="navHref">
+            {/* <a href="#contact" className="navHref">
               Contact Me
             </a>*/}
             {/*<a onClick={openPdf} className="resumeBut">

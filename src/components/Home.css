@@ -80,6 +80,7 @@ header {
   font-size: 20px;
   backdrop-filter: blur(15px);
   color: white;
+  cursor: pointer;
 }
 .nav {
   position: relative;
@@ -217,7 +218,9 @@ header {
   justify-content: center;
   gap: 10px;
   animation: aba linear;
-  animation-range: entry 20%, cover 30%;
+  animation-range:
+    entry 20%,
+    cover 30%;
   animation-timeline: view();
 }
 @keyframes aba {
@@ -264,7 +267,9 @@ header {
   flex-wrap: wrap;
   gap: 10px;
   animation: abx linear;
-  animation-range: entry 0%, cover 20%;
+  animation-range:
+    entry 0%,
+    cover 20%;
   animation-timeline: view();
 }
 @keyframes abx {
@@ -308,7 +313,9 @@ header {
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
   background-color: rgba(225, 225, 225, 0.1);
   animation: aba linear;
-  animation-range: entry 0%, cover 30%;
+  animation-range:
+    entry 0%,
+    cover 30%;
   animation-timeline: view();
 }
 @keyframes aba {
@@ -383,7 +390,9 @@ header {
   flex-direction: column;
   gap: 10px;
   animation: abh linear;
-  animation-range: entry 0%, cover 20%;
+  animation-range:
+    entry 0%,
+    cover 20%;
   animation-timeline: view();
 }
 @keyframes abh {
@@ -431,7 +440,9 @@ header {
   padding: 10px 10px;
   color: black;
   animation: abg linear;
-  animation-range: entry 0%, cover 20%;
+  animation-range:
+    entry 0%,
+    cover 20%;
   animation-timeline: view();
 }
 @keyframes abg {
@@ -481,7 +492,9 @@ header {
   padding: 10px 10px;
   border-radius: 15px;
   animation: aba linear;
-  animation-range: entry 0%, cover 30%;
+  animation-range:
+    entry 0%,
+    cover 30%;
   animation-timeline: view();
 }
 @keyframes aba {
