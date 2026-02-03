@@ -68,7 +68,6 @@ header {
   gap: 10px;
   color: white;
   z-index: 1;
-  backdrop-filter: blur(15px);
 }
 .headerIco {
   padding: 10px 10px;
