@@ -42,6 +42,5 @@ body::-webkit-scrollbar {
   display: none;
 }
 body {
-  background-color: #000003;
   scroll-behavior: smooth;
 }

@@ -1,0 +1,593 @@
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+#loadania {
+  animation: loa 1s ease-out infinite;
+}
+@keyframes loa {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+#loadanib {
+  animation: loa 1s ease-out infinite;
+  animation-delay: 1.1s;
+}
+@keyframes loa {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+#loadanic {
+  animation: loa 1s ease-out infinite;
+  animation-delay: 1.2s;
+}
+@keyframes loa {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+a {
+  transition: 1s;
+}
+a:hover {
+  transform: translateY(-3px);
+}
+.orgBg {
+  position: absolute;
+  inset: 0;
+  height: 100vh;
+  width: 100%;
+  backdrop-filter: blur(20px);
+  z-index: 1;
+}
+.ContentContainer {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  z-index: 10;
+}
+header {
+  position: fixed;
+  top: 10px;
+  padding: 10px;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  z-index: 1;
+}
+.headerIco {
+  padding: 10px 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+  font-size: 20px;
+  backdrop-filter: blur(15px);
+  color: black;
+  cursor: pointer;
+}
+.nav {
+  position: relative;
+  padding: 5px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(15px);
+  gap: 15px;
+}
+.navHref {
+  color: black;
+  padding: 5px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.resumeBut {
+  background-color: slateblue;
+  color: white;
+  border-radius: 20px;
+  text-decoration: none;
+  padding: 5px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.heroSection {
+  position: relative;
+  top: 60px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  color: white;
+}
+.typeBox {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.hiab {
+  font-size: 50px;
+  font-weight: 600;
+  color: black;
+  text-align: center;
+}
+.typeminBox {
+  position: relative;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+}
+.hibb {
+  font-size: 50px;
+  background: linear-gradient(90deg, #c084fc, #22d3ee);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-weight: 600;
+  text-align: center;
+}
+.cursor {
+  font-size: 50px;
+  font-weight: 600;
+  text-align: center;
+}
+.ctaBox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.ctaBut {
+  padding: 10px 10px;
+  border-radius: 20px;
+  background-color: slateblue;
+  box-shadow: 0px 6px 15px rgba(225, 225, 225, 0.6);
+  backdrop-filter: blur(15px);
+  cursor: pointer;
+  transition: 1s;
+}
+.ctaBut:hover {
+  transform: translateY(-3px);
+}
+.ctaButb {
+  padding: 10px 10px;
+  border-radius: 20px;
+  box-shadow: 0px 6px 15px rgba(225, 225, 225, 0.6);
+  backdrop-filter: blur(15px);
+  cursor: pointer;
+  text-decoration: none;
+  background: white;
+  color: black;
+}
+.ctaBut a {
+  text-decoration: none;
+  color: white;
+  transition: 1s;
+}
+.ctaButb a {
+  text-decoration: none;
+  color: black;
+  transition: 1s;
+}
+.subTitle {
+  text-align: center;
+}
+.aboutSection {
+  position: relative;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+.aboutContainera {
+  position: relative;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+.profileImg {
+  height: 100%;
+  width: 100%;
+}
+
+.aboutContainerb {
+  position: relative;
+  padding: 10px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 10px;
+  animation: aba linear;
+  animation-range:
+    entry 20%,
+    cover 30%;
+  animation-timeline: view();
+}
+@keyframes aba {
+  0% {
+    opacity: 0;
+    scale: 0.5;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+.skillsSection,
+.projectSection,
+.contactSection {
+  position: relative;
+  min-height: calc(100vh - 50px);
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: 1s;
+}
+.skillsSection h1,
+.projectSection h1,
+.contactSection h1,
+.contactSection p {
+  text-align: center;
+}
+.skillContainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+.flContainer {
+  position: relative;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  animation: abx linear;
+  animation-range:
+    entry 0%,
+    cover 20%;
+  animation-timeline: view();
+}
+@keyframes abx {
+  0% {
+    transform: translateX(-40px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+.skillPl {
+  min-width: 80px;
+  padding: 10px 10px;
+  text-align: center;
+  border-radius: 20px;
+  background-color: rgba(225, 225, 225, 0.1);
+  border: 1px solid hsl(0deg, 0%, 95%);
+  box-shadow: 0px 6px 15px rgba(225, 225, 225, 0.6);
+  cursor: pointer;
+  transition: 1s;
+}
+.skillPl:hover {
+  transform: scaleX(1);
+  background-color: slateblue;
+  color: white;
+}
+.projectContainer {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.projectBox {
+  position: relative;
+  height: 100%;
+  padding: 2px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 0px 3px 15px rgba(225, 225, 225, 0.3);
+  background-color: rgba(225, 225, 225, 0.1);
+  animation: aba linear;
+  animation-range:
+    entry 0%,
+    cover 30%;
+  animation-timeline: view();
+}
+@keyframes aba {
+  0% {
+    opacity: 0;
+    scale: 0.5;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+.projectImg {
+  width: 100%;
+  height: max-content;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transition: 1s;
+}
+.projectBox:hover {
+  background-color: white;
+  color: black;
+}
+.projectminBox {
+  flex-grow: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+.projectTitle {
+  font-size: 18px;
+  font-weight: 600;
+}
+.projectskillBox {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.projectSkilluse {
+  padding: 7px;
+  text-align: center;
+  border-radius: 20px;
+  background-color: rgba(225, 225, 225, 0.1);
+  border: 1px solid hsl(0deg, 0%, 95%);
+  box-shadow: 0px 6px 15px rgba(225, 225, 225, 0.6);
+  transition: 1s;
+  cursor: pointer;
+}
+.projectSkilluse:hover {
+  transform: scaleX(1);
+  background-color: slateblue;
+  color: white;
+}
+.projectBut {
+  padding: 10px 10px;
+  background-color: slateblue;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  width: 100%;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 20px;
+  cursor: pointer;
+  border: none;
+  margin-top: auto;
+}
+.contactxyz {
+  position: relative;
+  display: flex;
+  gap: 10px;
+}
+.contactusContainera {
+  position: relative;
+  width: 50%;
+  padding: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: abh linear;
+  animation-range:
+    entry 0%,
+    cover 20%;
+  animation-timeline: view();
+}
+@keyframes abh {
+  0% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+.contactusContainera form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.inputField {
+  padding: 10px 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+  border: 1px solid #dfdfdf;
+  background-color: hsl(0deg, 0%, 95%);
+}
+.textArea {
+  height: 20vh;
+  padding: 10px 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+  border: 1px solid #dfdfdf;
+  background-color: hsl(0deg, 0%, 95%);
+  resize: none;
+}
+.projectButx {
+  padding: 10px 10px;
+  background-color: slateblue;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  width: 100%;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+}
+.contactusContainerb {
+  position: relative;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-image: url("/loginbg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 10px 10px;
+  color: black;
+  animation: abg linear;
+  animation-range:
+    entry 0%,
+    cover 20%;
+  animation-timeline: view();
+}
+@keyframes abg {
+  0% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+.contactusContainerb p {
+  text-align: start;
+}
+.linkBox {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.contactusLink {
+  padding: 10px 10px;
+  border-radius: 20px;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+  background-color: rgba(225, 225, 225, 0.1);
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  width: max-content;
+  transition: 1s;
+  border: 1px solid #666;
+  color: black;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  display: inline-block;
+  max-width: 100%;
+}
+.contactusLink:hover {
+  background-color: slateblue;
+  color: white;
+}
+.ftContainer {
+  height: 30vh;
+  width: 100%;
+  background-image: url("/fbg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 10px 10px;
+  border-radius: 15px;
+  animation: aba linear;
+  animation-range:
+    entry 0%,
+    cover 30%;
+  animation-timeline: view();
+}
+@keyframes aba {
+  0% {
+    opacity: 0;
+    scale: 0.5;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+.icobox {
+  position: relative;
+  display: flex;
+  gap: 10px;
+}
+.ftContainer a {
+  text-align: start;
+  font-size: 25px;
+  color: black;
+}
+mark {
+  background-color: slateblue;
+  color: white;
+}
+@media (max-width: 681px) {
+  .aboutSection {
+    flex-direction: column;
+  }
+  .aboutContainera,
+  .aboutContainerb {
+    width: 100%;
+  }
+  .aboutContainerb h1 {
+    width: 100%;
+    text-align: center;
+  }
+  .profileImg {
+    width: 50%;
+    border-radius: 10px;
+  }
+}
+@media (max-width: 593px) {
+  .contactxyz {
+    flex-wrap: wrap;
+  }
+  .contactusContainera,
+  .contactusContainerb {
+    width: 100%;
+  }
+  .nav {
+    overflow-x: scroll;
+  }
+}
+@media (max-width: 538px) {
+  .hiab,
+  .hibb,
+  .cursor {
+    font-size: 25px;
+  }
+}
+@media (max-width: 382px) {
+  .projectContainer {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  .flContainer {
+    padding: 0px;
+  }
+}

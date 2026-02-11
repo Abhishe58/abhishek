@@ -130,7 +130,7 @@ export default function Home() {
   const [isPageLoaded, setIsPageLoaded] = useState(false);
 
   useEffect(() => {
-    let isMounted = true;
+    let isMounted = true; // Track if component is mounted
 
     const imageUrls = [
       "/aprofile.png",
@@ -146,38 +146,39 @@ export default function Home() {
       "/fbg.jpg",
     ];
 
-    // 1. Add ': string' to define the input type
-    // 2. Add ': Promise<void>' to define what the function returns
     const preloadImage = (url: string): Promise<void> => {
-      // 3. Add '<void>' here to tell TypeScript this promise resolves with no data
       return new Promise<void>((resolve) => {
         const img = new Image();
-        img.onload = () => resolve();
-        img.onerror = () => resolve();
         img.src = url;
-        if (img.complete) resolve();
+
+        // If image is already cached, resolve immediately
+        if (img.complete) {
+          resolve();
+          return;
+        }
+
+        img.onload = () => resolve();
+        img.onerror = () => resolve(); // Keep going even if one fails
       });
     };
 
-    const loadImagesPromise = Promise.all(imageUrls.map(preloadImage));
-
-    // 4. Add '<void>' here too
-    const timeoutPromise = new Promise<void>((resolve) =>
-      setTimeout(resolve, 3000),
-    );
-
-    Promise.race([loadImagesPromise, timeoutPromise]).then(() => {
-      if (isMounted) setIsPageLoaded(true);
-    });
+    Promise.all(imageUrls.map(preloadImage))
+      .then(() => {
+        if (isMounted) {
+          setIsPageLoaded(true);
+        }
+      })
+      .catch((err) => {
+        console.error("Image preload failed", err);
+        if (isMounted) {
+          setIsPageLoaded(true); // Fallback to show content anyway
+        }
+      });
 
     return () => {
-      isMounted = false;
+      isMounted = false; // Cleanup to prevent memory leaks
     };
   }, []);
-
-  // if (!isPageLoaded) {
-  //   return <div>Loading...</div>; // Or your custom Spinner component
-  // }
 
   const projects = [
     {
@@ -271,39 +272,100 @@ export default function Home() {
   };
   return (
     <>
+      {!isPageLoaded && (
+        <div
+          style={{
+            position: "fixed",
+            zIndex: 9999,
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+          }}
+          className="loadingContainer"
+        >
+          <h1 style={{ textAlign: "center" }}>
+            Welcome to <span style={{ color: "slateblue" }}>Abhishek</span>{" "}
+            Portfolio
+          </h1>
+          <h2 style={{ textAlign: "center" }}>
+            Loading my experience<span id="loadania">.</span>
+            <span id="loadanib">.</span>
+            <span id="loadanic">.</span>
+          </h2>
+        </div>
+      )}
       <div
         style={{
-          position: "fixed",
-          zIndex: 9999,
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          backgroundColor: "#fff", // Ensure it has a background color
-          display: "flex", // Center content easily
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          // THE TRANSITION MAGIC:
-          opacity: isPageLoaded ? 0 : 1,
-          pointerEvents: isPageLoaded ? "none" : "all", // Allows clicking content under it once faded
+          opacity: isPageLoaded ? 1 : 0,
           transition: "opacity 0.5s ease",
         }}
-        className="loadingContainer"
       >
-        <h1 style={{ textAlign: "center" }}>
-          Welcome to <span style={{ color: "slateblue" }}>Abhishek</span>{" "}
-          Portfolio
-        </h1>
-        <h2 style={{ textAlign: "center" }}>
-          Loading my experience<span id="loadania">.</span>
-          <span id="loadanib">.</span>
-          <span id="loadanic">.</span>
-        </h2>
-      </div>
-
-      <div>
         <div className="orgBg">
+          {/* 1. The Moving Orbs */}
+          <motion.div
+            animate={{
+              x: ["0%", "20%", "0%"], // Moved by percentage relative to itself
+              y: ["0%", "-10%", "0%"],
+              scale: [1, 1.1, 1], // Reduced scale slightly to save space
+            }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            style={{
+              position: "absolute",
+              top: "20%",
+              left: "10%", // Adjusted to be closer to center
+              width: "clamp(200px, 50vw, 400px)", // Responsive width: Min 200px, Max 400px
+              height: "clamp(200px, 50vw, 400px)", // Matches width
+              background: "#7b2ff7",
+              borderRadius: "50%",
+              filter: "blur(80px)", // Reduced blur slightly for performance on mobile
+              opacity: 0.6,
+              zIndex: 0,
+            }}
+          />
+
+          {/* Cyan Blob */}
+          <motion.div
+            animate={{
+              x: ["0%", "-20%", "0%"],
+              y: ["0%", "10%", "0%"],
+              scale: [1, 1.1, 1],
+            }}
+            transition={{
+              duration: 15,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            style={{
+              position: "absolute",
+              top: "30%", // Adjusted to avoid overlapping perfectly
+              right: "10%",
+              width: "clamp(150px, 40vw, 320px)", // Responsive width
+              height: "clamp(150px, 40vw, 320px)",
+              background: "#2bf2ff",
+              borderRadius: "50%",
+              filter: "blur(80px)",
+              opacity: 0.5,
+              zIndex: 0,
+            }}
+          />
+
+          {/* 2. Glass Overlay (Optional) */}
+          {/* This makes the text readable by darkening the background slightly */}
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              background: "rgba(0,0,0,0.3)", // Mild tint
+              backdropFilter: "blur(20px)", // "Frosted Glass" effect over the orbs
+              zIndex: 1,
+            }}
+          />
+
           {/* 3. Your Content Goes Here */}
 
           <div className="ContentContainer">
@@ -374,16 +436,22 @@ export default function Home() {
                     Contact Us
                   </motion.a>
                 </motion.p>
-
-                <motion.a
-                  onClick={openPdf}
+                <motion.p
                   className="ctaBut"
                   initial={{ y: 30, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
                 >
-                  Resume
-                </motion.a>
+                  <motion.a
+                    onClick={openPdf}
+                    className="resumeBut"
+                    initial={{ y: 30, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                  >
+                    Resume
+                  </motion.a>
+                </motion.p>
               </div>
             </motion.div>
             <div className="aboutSection" id="about">
@@ -542,7 +610,7 @@ export default function Home() {
                       onChange={handleChange}
                       className="textArea"
                     ></textarea>
-                    <button className="projectButx" type="submit">
+                    <button className="projectBut" type="submit">
                       Submit Form
                     </button>
                   </form>
