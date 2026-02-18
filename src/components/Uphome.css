@@ -547,6 +547,45 @@ mark {
   background-color: slateblue;
   color: white;
 }
+.redesignContainer {
+  position: relative;
+  width: 100%;
+  height: auto;
+  box-shadow: 0px 6px 15px rgba(225, 225, 225, 0.3);
+  border-radius: 10px;
+}
+.redesignBoxa {
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: red;
+}
+.redesignImage {
+  display: block;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+.redesignBoxb {
+  position: relative;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.resnewBut,
+.resnewButb {
+  position: relative;
+  padding: 8px;
+  border-radius: 15px;
+  background-color: white;
+  color: black;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.resnewButb {
+  background-color: black;
+  color: white;
+}
 @media (max-width: 681px) {
   .aboutSection {
     flex-direction: column;
@@ -563,6 +602,9 @@ mark {
     width: 50%;
     border-radius: 10px;
   }
+  .aboutdes {
+    text-align: center;
+  }
 }
 @media (max-width: 593px) {
   .contactxyz {
@@ -571,9 +613,6 @@ mark {
   .contactusContainera,
   .contactusContainerb {
     width: 100%;
-  }
-  .nav {
-    overflow-x: scroll;
   }
 }
 @media (max-width: 538px) {

@@ -12,6 +12,9 @@ import blog from "/blog.png";
 import connectcables from "/connectcables.png";
 import ratanindustries from "/ratanindustries.png";
 import yashrajcab from "/yashrajcab.png";
+import inventry_management from "/inventry_management.png";
+import gturesdesign from "/gturesdesign.png";
+import gtuolddesign from "/gtuolddesign.png";
 import resumePdf from "/resumea.pdf";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaLinkedin } from "react-icons/fa6";
@@ -136,6 +139,7 @@ export default function Home() {
       "/aprofile.png",
       "/studentpredication.png",
       "/heartdiseasedetection.png",
+      "/inventry_management.png",
       "/ecommerce.png",
       "/passwordmanager.png",
       "/taskmanager.png",
@@ -144,6 +148,8 @@ export default function Home() {
       "/yashrajcab.png",
       "/loginbg.png",
       "/fbg.jpg",
+      "/gturesdesign.png",
+      "/gtuolddesign.png",
     ];
 
     // 1. Add ': string' to define the input type
@@ -182,6 +188,23 @@ export default function Home() {
   const projects = [
     {
       id: 1,
+      name: "Inventry Management System",
+      image: inventry_management,
+      description:
+        "AI-Powered Inventory Manager (MERN + FastAPI). Integrates a custom Machine Learning model to predict future sales demand, preventing stockouts through real-time analytics, dynamic visualizations, and automated low-inventory alerts.",
+      skills: [
+        "PANDAS",
+        "MATPLOTLIB",
+        "SKLEARN",
+        "REACT",
+        "EXPRESS",
+        "NODE.JS",
+        "MONGODB",
+      ],
+      link: "https://inventrymanagementj.netlify.app/",
+    },
+    {
+      id: 2,
       name: "Heart Disease Detector",
       image: heartdiseasedetection,
       description:
@@ -190,7 +213,7 @@ export default function Home() {
       link: "https://heartdisease.pythonanywhere.com/",
     },
     {
-      id: 2,
+      id: 3,
       name: "EduLens-Student Result Predictor",
       image: studentpredication,
       description:
@@ -199,7 +222,7 @@ export default function Home() {
       link: "https://studentresultpredictor.pythonanywhere.com/",
     },
     {
-      id: 3,
+      id: 4,
       name: "E-Commerce",
       image: ecommerce,
       description:
@@ -208,7 +231,7 @@ export default function Home() {
       link: "https://ecommerce8.pythonanywhere.com/",
     },
     {
-      id: 4,
+      id: 5,
       name: "Password Manager",
       image: passwordmanager,
       description:
@@ -217,7 +240,7 @@ export default function Home() {
       link: "https://passwordsmanager.pythonanywhere.com/",
     },
     {
-      id: 5,
+      id: 6,
       name: "Task Manager",
       image: taskmanager,
       description:
@@ -226,7 +249,7 @@ export default function Home() {
       link: "https://taskmanager5.pythonanywhere.com/",
     },
     {
-      id: 6,
+      id: 7,
       name: "Blog",
       image: blog,
       description:
@@ -263,6 +286,17 @@ export default function Home() {
         "Delivered a responsive business website for Connect Cables, enhancing their online presence through structured content, optimized performance, and a professional industrial brand identity.",
       skills: ["HTML", "CSS", "JS", "EmailJs"],
       link: "https://connectcables.co.in/",
+    },
+  ];
+
+  const [resprev, setResprev] = useState(true);
+
+  const redesign = [
+    {
+      id: 1,
+      name: "GTU Student Portal",
+      image: gturesdesign,
+      oldimage: gtuolddesign,
     },
   ];
 
@@ -304,8 +338,6 @@ export default function Home() {
 
       <div>
         <div className="orgBg">
-          {/* 3. Your Content Goes Here */}
-
           <div className="ContentContainer">
             <motion.div
               className="heroSection"
@@ -392,7 +424,7 @@ export default function Home() {
               </div>
               <div className="aboutContainerb">
                 <h1>About Us</h1>
-                <p>
+                <p className="aboutdes">
                   A passionate Web Developer and Data Science enthusiast skilled
                   in front-end, back-end, data visualization, and machine
                   learning. Enjoys building modern, user-friendly digital
@@ -507,6 +539,44 @@ export default function Home() {
                     </div>
                   );
                 })}
+              </div>
+              <h1>Re-Design Websites</h1>
+              <div className="projectContainer">
+                {redesign.map((design) => (
+                  <div key={design.id} className="redesignContainer">
+                    <div className="redesignBoxa">
+                      <img
+                        src={resprev ? design.image : design.oldimage}
+                        alt={design.name}
+                        className="redesignImage"
+                      />
+                    </div>
+                    <div className="redesignBoxb">
+                      <p className="projectTitle">{design.name}</p>
+                      <div
+                        style={{
+                          position: "relative",
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "10px",
+                        }}
+                      >
+                        <p
+                          onClick={() => setResprev(true)}
+                          className="resnewBut"
+                        >
+                          My Design
+                        </p>
+                        <p
+                          onClick={() => setResprev(false)}
+                          className="resnewButb"
+                        >
+                          Old Design
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
             <div className="contactSection" id="contact">
