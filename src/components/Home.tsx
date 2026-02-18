@@ -19,6 +19,7 @@ import resumePdf from "/resumea.pdf";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaLinkedin } from "react-icons/fa6";
 import type { ChangeEvent, FormEvent } from "react";
+import Tspartical from "./Tspartical";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -346,6 +347,7 @@ export default function Home() {
               animate={isPageLoaded ? "visible" : "hidden"}
               initial="hidden"
             >
+              <Tspartical />
               <div className="typeBox">
                 <motion.p className="hiab" variants={itemVariants}>
                   Hi, I'm Abhishek{" "}
