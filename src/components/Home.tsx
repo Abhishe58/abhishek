@@ -15,6 +15,8 @@ import yashrajcab from "/yashrajcab.png";
 import inventry_management from "/inventry_management.png";
 import gturesdesign from "/gturesdesign.png";
 import gtuolddesign from "/gtuolddesign.png";
+import des from "/des.jpg";
+import desb from "/desb.png";
 import resumePdf from "/resumea.pdf";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaLinkedin } from "react-icons/fa6";
@@ -149,6 +151,8 @@ export default function Home() {
       "/yashrajcab.png",
       "/loginbg.png",
       "/fbg.jpg",
+      "/des.jpg",
+      "/desb.jpg",
       "/gturesdesign.png",
       "/gtuolddesign.png",
     ];
@@ -298,6 +302,16 @@ export default function Home() {
       name: "GTU Student Portal",
       image: gturesdesign,
       oldimage: gtuolddesign,
+    },
+  ];
+
+  const designtocode = [
+    {
+      id: 1,
+      name: "Design to Code",
+      design: des,
+      designb: desb,
+      link: "https://designtocodej.netlify.app/",
     },
   ];
 
@@ -576,6 +590,34 @@ export default function Home() {
                           Old Design
                         </p>
                       </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <h1>Design to Code</h1>
+              <div className="projectContainer">
+                {designtocode.map((destocode) => (
+                  <div key={destocode.id} className="redesignContainer">
+                    <div className="redesignBoxx">
+                      <img
+                        src={destocode.design}
+                        alt="design to code"
+                        className="redesignImagey"
+                      />
+                      <img
+                        src={destocode.designb}
+                        alt="design to code"
+                        className="redesignImagex"
+                      />
+                    </div>
+                    <div className="redesignBoxb">
+                      <a
+                        href={destocode.link}
+                        className="resnewButb"
+                        target="_black"
+                      >
+                        Visit Website
+                      </a>
                     </div>
                   </div>
                 ))}

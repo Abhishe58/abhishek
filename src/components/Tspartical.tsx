@@ -65,7 +65,7 @@ const Tspartical = () => {
         },
         detectRetina: true,
       }}
-      className="absolute top-0 left-0 w-full h-full -z-10" // Tailwind classes to position behind text
+      className="absolute top-0 left-0 w-full h-full -z-10"
     />
   );
 };
