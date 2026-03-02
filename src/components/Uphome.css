@@ -628,6 +628,15 @@ mark {
     text-align: center;
   }
 }
+@media (max-width: 650px) {
+  .redesignBoxx {
+    flex-direction: column;
+  }
+  .redesignImagey,
+  .redesignImagex {
+    width: 100%;
+  }
+}
 @media (max-width: 593px) {
   .contactxyz {
     flex-wrap: wrap;
