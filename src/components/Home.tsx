@@ -17,7 +17,7 @@ import gturesdesign from "/gturesdesign.png";
 import gtuolddesign from "/gtuolddesign.png";
 import des from "/des.jpg";
 import desb from "/desb.png";
-import resumePdf from "/resumea.pdf";
+import resumePdf from "/resumeb.pdf";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaLinkedin } from "react-icons/fa6";
 import type { ChangeEvent, FormEvent } from "react";
