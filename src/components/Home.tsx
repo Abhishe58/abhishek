@@ -17,11 +17,14 @@ import gturesdesign from "/gturesdesign.png";
 import gtuolddesign from "/gtuolddesign.png";
 import des from "/des.jpg";
 import desb from "/desb.png";
+import hospitalappok from "/hospitalappo.png";
 import resumePdf from "/resumeb.pdf";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaLinkedin } from "react-icons/fa6";
 import type { ChangeEvent, FormEvent } from "react";
 import Tspartical from "./Tspartical";
+// import { Hands } from "@mediapipe/hands";
+// import { Camera } from "@mediapipe/camera_utils";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -155,6 +158,7 @@ export default function Home() {
       "/desb.jpg",
       "/gturesdesign.png",
       "/gtuolddesign.png",
+      "/hospitalappok.png",
     ];
 
     // 1. Add ': string' to define the input type
@@ -192,7 +196,17 @@ export default function Home() {
 
   const projects = [
     {
-      id: 1,
+      id: 2,
+      name: "Hospital Appointment System",
+      image: hospitalappok,
+      description:
+        "Developed a scalable hospital appointment web application enabling secure login, appointment scheduling, and doctor management. Implemented REST APIs and responsive UI using React, Node.js, Express, and MongoDB.",
+      skills: ["REACT", "EXPRESS", "NODE.JS", "MONGODB"],
+      link: "https://hospitalappointnnent.netlify.app/",
+      linkb: "https://hospitalappointnnent.netlify.app/dlogin",
+    },
+    {
+      id: 2,
       name: "Inventry Management System",
       image: inventry_management,
       description:
@@ -209,7 +223,7 @@ export default function Home() {
       link: "https://inventrymanagementj.netlify.app/",
     },
     {
-      id: 2,
+      id: 3,
       name: "Heart Disease Detector",
       image: heartdiseasedetection,
       description:
@@ -218,7 +232,7 @@ export default function Home() {
       link: "https://heartdisease.pythonanywhere.com/",
     },
     {
-      id: 3,
+      id: 4,
       name: "EduLens-Student Result Predictor",
       image: studentpredication,
       description:
@@ -227,7 +241,7 @@ export default function Home() {
       link: "https://studentresultpredictor.pythonanywhere.com/",
     },
     {
-      id: 4,
+      id: 5,
       name: "E-Commerce",
       image: ecommerce,
       description:
@@ -236,7 +250,7 @@ export default function Home() {
       link: "https://ecommerce8.pythonanywhere.com/",
     },
     {
-      id: 5,
+      id: 6,
       name: "Password Manager",
       image: passwordmanager,
       description:
@@ -245,7 +259,7 @@ export default function Home() {
       link: "https://passwordsmanager.pythonanywhere.com/",
     },
     {
-      id: 6,
+      id: 7,
       name: "Task Manager",
       image: taskmanager,
       description:
@@ -254,7 +268,7 @@ export default function Home() {
       link: "https://taskmanager5.pythonanywhere.com/",
     },
     {
-      id: 7,
+      id: 8,
       name: "Blog",
       image: blog,
       description:
@@ -318,6 +332,102 @@ export default function Home() {
   const openPdf = () => {
     window.open(resumePdf, "_blank");
   };
+
+  // const videoref = useRef<HTMLVideoElement>(null);
+  // const lastY = useRef<number | null>(null);
+
+  // useEffect(() => {
+  //   const hands = new Hands({
+  //     locateFile: (file) =>
+  //       `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`,
+  //   });
+
+  //   hands.setOptions({
+  //     maxNumHands: 1,
+  //     modelComplexity: 1,
+  //     minDetectionConfidence: 0.7,
+  //     minTrackingConfidence: 0.7,
+  //   });
+
+  //   hands.onResults((result) => {
+  //     console.log("AI is looking for hands...");
+  //     if (result.multiHandLandmarks && result.multiHandLandmarks.length > 0) {
+  //       const landmark = result.multiHandLandmarks[0];
+
+  //       const indexTipY = landmark[8].y;
+  //       // const indexBaseY = landmark[5].y;
+  //       const middleTipY = landmark[12].y;
+  //       // const middleBaseY = landmark[9].y;
+
+  //       if (indexTipY) {
+  //         if (lastY.current !== null) {
+  //           const deltaY = lastY.current - indexTipY;
+
+  //           if (deltaY > 0.002) {
+  //             console.log("Scrolling Down!");
+  //             window.scrollBy({
+  //               top: deltaY * 3000,
+  //               behavior: "auto",
+  //             });
+  //           }
+  //         }
+  //         lastY.current = indexTipY;
+  //       } else {
+  //         lastY.current = null;
+  //       }
+
+  //       if (middleTipY) {
+  //         if (lastY.current !== null) {
+  //           const deltaY = lastY.current - middleTipY;
+
+  //           if (deltaY > 0.002) {
+  //             console.log("Scrolling Down!");
+  //             window.scrollBy({
+  //               top: -deltaY * 1000,
+  //               behavior: "auto",
+  //             });
+  //           }
+  //         }
+  //         lastY.current = middleTipY;
+  //       } else {
+  //         lastY.current = null;
+  //       }
+
+  //       // const isIndexUp = indexTipY < indexBaseY;
+  //       // const isMiddleUp = middleTipY < middleBaseY;
+
+  //       // if (isIndexUp && isMiddleUp) {
+  //       //   const currentAvgY = (indexTipY + middleTipY) / 2;
+
+  //       //   if (lastY.current !== null) {
+  //       //     const deltaY = lastY.current - currentAvgY;
+
+  //       //     if (deltaY > 0.01) {
+  //       //       window.scrollBy({
+  //       //         top: deltaY * 3000,
+  //       //         behavior: "auto",
+  //       //       });
+  //       //     }
+  //       //   }
+  //       //   lastY.current = currentAvgY;
+  //       // } else {
+  //       //   lastY.current = null;
+  //       // }
+  //     }
+  //   });
+  //   const camera = new Camera(videoref.current!, {
+  //     onFrame: async () => {
+  //       const videoElement = videoref.current;
+
+  //       if (videoElement) {
+  //         await hands.send({ image: videoElement });
+  //       }
+  //     },
+  //     width: 500,
+  //     height: 500,
+  //   });
+  //   camera.start();
+  // }, []);
   return (
     <>
       <div
@@ -517,6 +627,17 @@ export default function Home() {
                         >
                           Visit Site
                         </a>
+                        {pro.linkb ? (
+                          <a
+                            href={pro.linkb}
+                            target="_blank"
+                            className="projectBut"
+                          >
+                            Visit Doctor site
+                          </a>
+                        ) : (
+                          <p></p>
+                        )}
                       </div>
                     </div>
                   );
@@ -763,6 +884,10 @@ export default function Home() {
           </a>
         </motion.header>
       </div>
+      {/* <video
+        ref={videoref}
+        style={{ position: "fixed", bottom: "10px", right: "10px" }}
+      ></video> */}
     </>
   );
 }
